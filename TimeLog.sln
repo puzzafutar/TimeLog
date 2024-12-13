@@ -5,6 +5,8 @@ VisualStudioVersion = 17.12.35527.113 d17.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeLog.Api", "TimeLog.Api\TimeLog.Api.csproj", "{D7CF54E0-0BD3-404C-AF53-547657A8EEF8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeLog.Domain", "TimeLog.Domain\TimeLog.Domain.csproj", "{F602916D-01B7-470E-BFD9-08762AE045ED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{D7CF54E0-0BD3-404C-AF53-547657A8EEF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D7CF54E0-0BD3-404C-AF53-547657A8EEF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D7CF54E0-0BD3-404C-AF53-547657A8EEF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F602916D-01B7-470E-BFD9-08762AE045ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F602916D-01B7-470E-BFD9-08762AE045ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F602916D-01B7-470E-BFD9-08762AE045ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F602916D-01B7-470E-BFD9-08762AE045ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
