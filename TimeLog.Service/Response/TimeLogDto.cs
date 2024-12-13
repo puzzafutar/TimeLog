@@ -8,5 +8,6 @@ namespace TimeLog.Service.Response
         public string Description { get; set; }
         public DateTime Created { get; set; }
         public Action Action { get; set; }
+        public int TimerId { get; set; }
     }
 }

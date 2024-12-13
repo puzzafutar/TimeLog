@@ -362,3 +362,6 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 /TimeLog.Infrastructure/TimeLog.db
+/TimeLog.Api/TimeLog.db
+/TimeLog.Api/TimeLog.db-shm
+/TimeLog.Api/TimeLog.db-wal

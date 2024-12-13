@@ -30,7 +30,7 @@ namespace TimeLog.Service.Service
             }
         }
 
-        public async Task<List<Domain.TimeLog>> GetTimeLogsAsync(DateTime? fromDate, DateTime? toDate)
+        public async Task<List<Domain.TimeLog>> GetTimeLogsAsync(DateTime? fromDate, DateTime? toDate, int currentPage, int pageSize)
         {
             var query = _timeLogRepository.AsQueryable();
 
@@ -62,7 +62,19 @@ namespace TimeLog.Service.Service
                 }
             }
 
-            return resultList;
+            if (currentPage > 0 && pageSize > 0)
+            {
+                var totalCount = resultList.Count;
+                int TotalPages = (int)Math.Ceiling(totalCount / (double)pageSize);
+                int CurrentPage = currentPage;
+                List<Domain.TimeLog> Items = resultList.Skip((currentPage - 1) * pageSize).Take(pageSize).ToList();
+                return Items;
+            }
+            else
+            {
+                return resultList;
+            }
+            
         }
 
         public async Task<bool> HasActiveTimer(int id)
