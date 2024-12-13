@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+
 namespace TimeLog.Domain
 {
     public class TimeLog
