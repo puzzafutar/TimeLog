@@ -13,6 +13,11 @@ namespace TimeLog.Service.Factory
             _httpClient = httpClientFactory.CreateClient();
         }
 
+        public TimeLogFactory()
+        {
+            
+        }
+
         public async Task<Domain.TimeLog> GetActiveInstanceAsync(int id)
         {
             return new Domain.TimeLog

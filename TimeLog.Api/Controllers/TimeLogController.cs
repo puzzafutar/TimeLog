@@ -21,9 +21,9 @@ namespace TimeLog.Api.Controllers
         [HttpGet("GetTimeLogs")]
         [ProducesResponseType(typeof(List<TimeLogDto>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<List<TimeLogDto>> GetTimeLogsAsync(DateTime? fromDate, DateTime? toDate)
+        public async Task<List<TimeLogDto>> GetTimeLogsAsync(DateTime? fromDate, DateTime? toDate, int currentPage, int pageSize)
         {
-            var result = await _timeLogService.GetTimeLogsAsync(fromDate, toDate);
+            var result = await _timeLogService.GetTimeLogsAsync(fromDate, toDate, currentPage, pageSize);
             return _mapper.Map<List<TimeLogDto>>(result);
         }
 
