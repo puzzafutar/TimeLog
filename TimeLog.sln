@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeLog.Infrastructure", "T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeLog.Service", "TimeLog.Service\TimeLog.Service.csproj", "{896D5107-CC02-4218-9CD7-062F2539F91B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeLog.ServiceTests1", "TimeLog.ServiceTests1\TimeLog.ServiceTests1.csproj", "{F61B4556-A69D-49F5-A4BA-4C89A3D25A47}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{896D5107-CC02-4218-9CD7-062F2539F91B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{896D5107-CC02-4218-9CD7-062F2539F91B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{896D5107-CC02-4218-9CD7-062F2539F91B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F61B4556-A69D-49F5-A4BA-4C89A3D25A47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F61B4556-A69D-49F5-A4BA-4C89A3D25A47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F61B4556-A69D-49F5-A4BA-4C89A3D25A47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F61B4556-A69D-49F5-A4BA-4C89A3D25A47}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
