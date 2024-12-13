@@ -8,6 +8,7 @@ using TimeLog.Service.Service.Interface;
 using TimeLog.Service.Service;
 using TimeLog.Infrastructure.Context;
 using System.Diagnostics;
+using TimeLog.Api.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -42,7 +43,7 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
     app.UseSwagger();
     app.UseSwaggerUI();
-
+    app.UseMiddleware<GlobalExceptionMiddleware>();
     var swaggerUrl = "https://localhost:7137/swagger";
     app.Lifetime.ApplicationStarted.Register(() =>
     {
