@@ -6,7 +6,7 @@ using TimeLog.Service.Service.Interface;
 namespace TimeLog.Api.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class TimeLogController : ControllerBase
     {
         private readonly ITimeLogService _timeLogService;
@@ -20,7 +20,6 @@ namespace TimeLog.Api.Controllers
 
         [HttpGet("GetTimeLogs")]
         [ProducesResponseType(typeof(List<TimeLogDto>), StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<List<TimeLogDto>> GetTimeLogsAsync(DateTime? fromDate, DateTime? toDate, int currentPage, int pageSize)
         {
             var result = await _timeLogService.GetTimeLogsAsync(fromDate, toDate, currentPage, pageSize);
