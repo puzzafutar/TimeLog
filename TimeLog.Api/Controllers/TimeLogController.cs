@@ -27,7 +27,7 @@ namespace TimeLog.Api.Controllers
         }
 
         [HttpPost("StartStopTimer")]
-        [ProducesResponseType(typeof(List<int>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> StartStopTimerAsync(int id)
         {
@@ -57,7 +57,7 @@ namespace TimeLog.Api.Controllers
         }
 
         [HttpPut("UpdateTimer")]
-        [ProducesResponseType(typeof(List<TimeLogDto>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> UpdateTimerAsync(int id, [FromBody] string description)
         {
@@ -80,7 +80,7 @@ namespace TimeLog.Api.Controllers
         }
 
         [HttpPut("DeleteTimer")]
-        [ProducesResponseType(typeof(List<TimeLogDto>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> DeleteTimerAsync(int id)
         {
