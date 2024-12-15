@@ -12,7 +12,7 @@ namespace TimeLog.Service.Service.Interface
 
         Task DeleteTimerAsync(int id);
 
-        Task<bool> HasActiveTimer(int id);
+        Task<bool> HasActiveTimerAsync(int id);
 
         Task<bool> HasTimer(int id);
     }

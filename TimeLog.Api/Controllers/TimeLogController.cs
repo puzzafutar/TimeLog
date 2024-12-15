@@ -38,7 +38,7 @@ namespace TimeLog.Api.Controllers
 
             if (id > 0)
             {
-                bool isExsts = await _timeLogService.HasActiveTimer(id);
+                bool isExsts = await _timeLogService.HasActiveTimerAsync(id);
                 if (isExsts)
                 {
                     await _timeLogService.StartStopTimerAsync(id);
@@ -66,7 +66,7 @@ namespace TimeLog.Api.Controllers
                 return BadRequest("stopIndex must be greater then -1");
             }
 
-            bool isExsts = await _timeLogService.HasActiveTimer(id);
+            bool isExsts = await _timeLogService.HasActiveTimerAsync(id);
             if (isExsts)
             {
                 await _timeLogService.UpdateTimerAsync(id, description);

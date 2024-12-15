@@ -8,5 +8,6 @@
         Task UpdateAsync(T entity);
         Task DeleteAsync(int id);
         IQueryable<T> AsQueryable();
+        Task<List<T>> GetPaginableListAsync(int currentPage, int pageSize);
     }
 }

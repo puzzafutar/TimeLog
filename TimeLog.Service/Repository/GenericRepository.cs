@@ -50,5 +50,15 @@ namespace TimeLog.Service.Repository
         {
             return _dbSet.AsQueryable();
         }
+
+        public async Task<List<T>> GetPaginableListAsync(int currentPage, int pageSize)
+        {
+            var resultList = await _dbSet.ToListAsync();
+            var totalCount = resultList.Count;
+            int TotalPages = (int)Math.Ceiling(totalCount / (double)pageSize);
+            int CurrentPage = currentPage;
+            List<T> Items = resultList.Skip((currentPage - 1) * pageSize).Take(pageSize).ToList();
+            return Items;
+        }
     }
 }
