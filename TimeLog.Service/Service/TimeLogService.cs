@@ -72,7 +72,7 @@ namespace TimeLog.Service.Service
             return lastLog != null && (lastLog.Action != Domain.Action.Delete && lastLog.Action != Domain.Action.Stop);
         }
 
-        public async Task<bool> HasTimer(int id)
+        public async Task<bool> HasTimerAsync(int id)
         {
             var query = _timeLogRepository.AsQueryable();
 

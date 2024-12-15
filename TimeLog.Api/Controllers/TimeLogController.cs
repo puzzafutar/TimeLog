@@ -84,7 +84,7 @@ namespace TimeLog.Api.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> DeleteTimerAsync(int id)
         {
-            bool isExsts = await _timeLogService.HasTimer(id);
+            bool isExsts = await _timeLogService.HasTimerAsync(id);
             if (isExsts)
             {
                 await _timeLogService.DeleteTimerAsync(id);

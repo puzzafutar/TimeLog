@@ -14,6 +14,6 @@ namespace TimeLog.Service.Service.Interface
 
         Task<bool> HasActiveTimerAsync(int id);
 
-        Task<bool> HasTimer(int id);
+        Task<bool> HasTimerAsync(int id);
     }
 }
