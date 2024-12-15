@@ -36,48 +36,30 @@ namespace TimeLog.Service.Service
 
             if (fromDate.HasValue)
             {
-                query = query.Where(x => x.Created <= fromDate);
+                query = query.Where(x => x.Created >= fromDate);
             }
 
             if (toDate.HasValue)
             {
-                query = query.Where(x => x.Created >= toDate);
+                query = query.Where(x => x.Created <= toDate);
             }
 
-            var partResultList = await query.ToListAsync();
+            var timeLogResultList = await query.ToListAsync();
 
-            List<Domain.TimeLog> resultList = new List<Domain.TimeLog>();
-            foreach (var item in partResultList)
-            {
-                var lastTimerLog = partResultList.Where(x => x.TimerId == item.TimerId).LastOrDefault();
-
-                if (!resultList.Any(x => x.TimerId == item.TimerId))
-                {
-                    if (lastTimerLog != null && lastTimerLog.Action == Domain.Action.Modify)
-                    {
-                        lastTimerLog.Action = Domain.Action.Start;
-                    }
-
-                    resultList.Add(lastTimerLog);
-                }
-            }
+            timeLogResultList = _timeLogRepository.SetLatestStatus(timeLogResultList);
 
             if (currentPage > 0 && pageSize > 0)
             {
-                var totalCount = resultList.Count;
-                int TotalPages = (int)Math.Ceiling(totalCount / (double)pageSize);
-                int CurrentPage = currentPage;
-                List<Domain.TimeLog> Items = resultList.Skip((currentPage - 1) * pageSize).Take(pageSize).ToList();
-                return Items;
+                return await _timeLogRepository.GetPaginableListAsync(currentPage, pageSize);
             }
             else
             {
-                return resultList;
+                return timeLogResultList;
             }
             
         }
 
-        public async Task<bool> HasActiveTimer(int id)
+        public async Task<bool> HasActiveTimerAsync(int id)
         {
             var query = _timeLogRepository.AsQueryable();
 
@@ -135,6 +117,6 @@ namespace TimeLog.Service.Service
             var entity = await _timeLogFactory.GetModifiedInstanceAsync(id, description);
             await _timeLogRepository.AddAsync(entity);
             return;
-        }
+        }  
     }
 }
